@@ -13,7 +13,7 @@ proxy. Before you start, you'll need
 
 # Building
 
-* install dependencies using `npm install` or `yarn install`
+* install dependencies using `npm install`.
 * run the linter if you like, with `yarn lint`
 
 # Running
