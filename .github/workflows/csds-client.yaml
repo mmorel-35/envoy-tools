@@ -21,3 +21,18 @@ jobs:
       run: make -C csds-client
     - name: Test
       run: make -C csds-client test
+  envoy_curses:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+        cache: 'npm'
+        cache-dependency-path: envoy-curses/package-lock.json
+    - run: npm ci
+      working-directory: envoy-curses
+    - run: npm run lint
+      working-directory: envoy-curses
+    - run: npm test
+      working-directory: envoy-curses
